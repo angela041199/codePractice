@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>制服競賽</title>
+    <style>
+      :root {
+        --dark-blue: rgb(5, 53, 53);
+        --blue: rgb(33, 120, 133);
+        --gray: rgb(68, 68, 68);
+        --darkgray: rgb(43, 43, 43);
+        --lightgray: #999;
+        --dot: 90px;
+        --dot-small: 50px;
+      }
+      .unstyled {
+        text-decoration: none;
+        list-style: none;
+      }
+      .navwords {
+        color: var(--dark-blue);
+        font-weight: 600;
+      }
+      .yellow {
+        background: yellow;
+        padding: 0.2rem 0.5rem;
+        border-radius: 20px;
+      }
+      .flex {
+        display: flex;
+        margin-inline: auto;
+        justify-content: center;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: url(/bg.jpg) center center;
+      }
+      header {
+        background: rgb(83, 184, 200);
+        background-image: url("/header_l.jpg");
+        background-repeat: repeat-x;
+        background-position: bottom;
+        & .icon > img {
+          width: 300px;
+          padding: 0.5rem 0 0 0.5rem;
+        }
+      }
+      nav > ul {
+        display: flex;
+        margin: auto;
+        justify-content: space-between;
+        max-width: 600px;
+        padding: 2rem 0;
+      }
+      .wrapper {
+        max-width: 800px;
+        margin: 3rem auto;
+      }
+      .intro {
+        margin: 0.5rem 0 0;
+        text-align: center;
+        line-height: 1.7;
+      }
+      footer {
+        background: black;
+
+        & p.s {
+          color: var(--lightgray);
+          margin: 0;
+          text-align: center;
+          padding: 1rem 0;
+          font-size: xx-small;
+        }
+      }
+      .footercontainer {
+        padding: 1rem 0;
+      }
+
+      .textstyle {
+        background: white;
+        border: 1px solid var(--blue);
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 3rem 0 5rem;
+        line-height: 1.8rem;
+        box-shadow: 0px 0px 4px rgb(155, 155, 155);
+      }
+      .up {
+        position: absolute;
+        z-index: 5;
+      }
+
+      .dot-gray {
+        background: var(--gray);
+        color: var(--lightgray);
+        width: var(--dot-small);
+        height: var(--dot-small);
+        line-height: var(--dot);
+        border-radius: 50%;
+        font-size: 1.5rem;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-size: smaller;
+      }
+      .br {
+        padding: 0;
+        margin: 0;
+        line-height: 1.3rem;
+      }
+      .bigDotdiv {
+        width: var(--dot);
+        height: var(--dot);
+        background: var(--blue);
+        border-radius: 50%;
+        top: -45px;
+        left: -45px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+      .bigDot {
+        font-size: 1.4rem;
+        width: var(--dot);
+        text-align: center;
+        color: white;
+        & > span {
+          display: inline-block;
+        }
+      }
+      .girl {
+        right: 10px;
+        bottom: 20px;
+      }
+      .girl2 {
+        left: -50px;
+        bottom: 40px;
+      }
+      .hat {
+        left: 300px;
+      }
+      .position-relative {
+        position: relative;
+      }
+      .right {
+        text-align: right;
+        /* display: flex;
+        justify-content: end; */
+      }
+      .padding {
+        padding-bottom: 10rem;
+      }
+      .colorWords {
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 16px;
+      }
+      .smallerwords {
+        font-size: 15px;
+      }
+      .imgheigh {
+        height: var(--dot-small);
+        margin: 0 auto;
+      }
+      .footerstyle {
+        border-bottom: 0.25px solid white;
+      }
+      .lineh {
+        padding-bottom: 1rem;
+      }
+      .iconposition {
+        object-position: 0px -252px;
+      }
+      .iconposition1 {
+        object-position: 0px -324px;
+      }
+      .menuposition {
+        right: 1rem;
+        top: 65px;
+      }
+      ol > li {
+        padding: 0.5rem;
+      }
+      .menu {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        overflow: hidden;
+        background: var(--dark-blue);
+        border-radius: 50%;
+        margin: 0.5rem 0;
+
+        & > img {
+          width: 36px;
+          object-fit: cover;
+        }
+      }
+      .mobile {
+        display: none;
+      }
+      .icons {
+        margin: 1rem auto;
+      }
+      /* .desk {
+        display: block;
+      } */
+      .Dotdiv {
+        width: var(--dot-small);
+        height: var(--dot-small);
+        background: var(--gray);
+        border-radius: 50%;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+      }
+      .Dot {
+        font-size: 0.85rem;
+        width: var(--dot-small);
+        text-align: center;
+        color: var(--lightgray);
+        & > span {
+          display: inline-block;
+        }
+      }
+      .footerli {
+        display: inline-flex;
+        padding: 0 0.8rem;
+      }
+
+      @media screen and (max-width: 576px) {
+        .desk {
+          display: none;
+        }
+        .mobile {
+          display: block;
+        }
+        .iconposition {
+          object-position: 0px 0px;
+        }
+        .titleimg {
+          max-width: 100%;
+          margin: 2rem 0;
+
+          > img {
+            max-width: 100%;
+            padding-bottom: 3.5rem;
+            /* padding-top: 90px; */
+            /* vertical-align: middle; */
+          }
+        }
+
+        .menuposition {
+          right: 0.5rem;
+          top: 0.5rem;
+        }
+
+        .mobileTitle {
+          margin: 0 auto;
+        }
+        .bigDotdiv {
+          width: var(--dot);
+          height: var(--dot);
+          background: var(--blue);
+          border-radius: 50%;
+          top: -45px;
+          left: calc((100% - var(--dot)) / 2);
+          display: grid;
+          justify-content: center;
+          align-content: center;
+        }
+
+        .br {
+          padding: 0;
+          margin: 0;
+          line-height: 1.8rem;
+        }
+        .wrapper {
+          max-width: 100%;
+          margin: 0;
+          > .intro {
+            max-width: 100%;
+            > img.mobile {
+              max-width: 100%;
+            }
+          }
+        }
+        p.intro {
+          margin: 0 0 5rem;
+        }
+        .textstyle {
+          margin: 0 1rem 5rem;
+          padding-top: 3rem;
+        }
+
+        .right {
+          text-align: center;
+          display: block;
+          max-width: 100%;
+          > img.mobile {
+            max-width: 100%;
+            /* align-self: center; */
+          }
+        }
+        .dot-gray {
+          background: #363636;
+          color: var(--lightgray);
+          /* width: 100%; */
+          line-height: 0;
+          border-radius: 0;
+          font-size: 1.5rem;
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          font-size: smaller;
+        }
+        footer .flex {
+          display: inline-block;
+          margin-inline: auto;
+          justify-content: center;
+        }
+
+        .footercontainer {
+          width: 100%;
+          padding: 0;
+        }
+        .Dotdiv {
+          width: 100%;
+          height: fit-content;
+          background: var(--darkgray);
+          border-radius: 0;
+          justify-content: center;
+          align-content: center;
+        }
+        .Dot {
+          font-size: 1rem;
+          margin: 0.5rem;
+          width: fit-content;
+          text-align: center;
+          color: var(--lightgray);
+          & > span {
+            display: inline;
+          }
+        }
+        .footerli {
+          border: 1px solid var(--darkgray);
+          width: 50%;
+          float: left;
+          display: inline-flex;
+          padding: 0.5rem 0;
+        }
+      }
+      .center {
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="icon">
+        <img src="/codingPractice/RWD-Practice/image/logo_top.png" alt="" />
+      </div>
+      <div class="titleimg">
+        <img
+          class="flex"
+          src="/codingPractice/RWD-Practice/image/title.png"
+          alt=""
+        />
+      </div>
+      <div class="up menuposition desk">
+        <div class="menu">
+          <img
+            class="iconposition1"
+            src="/codingPractice/RWD-Practice/image/m_menu.png"
+            alt=""
+          />
+        </div>
+        <div class="menu">
+          <img
+            class="iconposition"
+            src="/codingPractice/RWD-Practice/image/m_menu.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="up menuposition mobile">
+        <div class="menu">
+          <img
+            class="iconposition"
+            src="/codingPractice/RWD-Practice/image/m_menu.png"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <nav class="desk">
+        <ul class="unstyled">
+          <li><a class="unstyled yellow navwords" href="">活動辦法</a></li>
+          <li><a class="unstyled navwords" href="">全台海選</a></li>
+          <li><a class="unstyled navwords" href="">TOP12決賽</a></li>
+          <li><a class="unstyled navwords" href="">制服辣秘辛</a></li>
+        </ul>
+      </nav>
+      <!-- <img src="/codingPractice/RWD-Practice/image/header_l.png" alt="" /> -->
+    </header>
+    <div class="wrapper">
+      <div class="intro">
+        <img
+          class="flex desk"
+          src="/codingPractice/RWD-Practice/image/p_title.png"
+          alt=""
+        />
+        <img
+          class="flex mobile"
+          src="/codingPractice/RWD-Practice/image/p_title_m.png"
+          alt=""
+        />
+      </div>
+      <div class="up hat desk">
+        <img src="/codingPractice/RWD-Practice/image/hat.png" alt="" />
+      </div>
+      <p class="intro">
+        專屬高校生的青春印記 <br />
+        第三屆畢業季高校制服大賞熱血開跑！<br />
+        網羅全台逾500所高中校園制服進行強烈的廝殺票選 <br />
+        究竟是純潔無敵白襯衫 <br />
+        萬年不敗的水手服 <br />
+        還是充滿萌味的連身款能奪下最終勝利呢? <br />
+        在即將來臨的畢業季， <br />
+        為自己的學校制服再添一筆輝煌記事吧！<br />
+        今年，2016的制服大賞，你投哪一家！
+      </p>
+      <div class="content position-relative">
+        <div class="bigDotdiv up">
+          <p class="bigDot">活動 <span>時間</span></p>
+        </div>
+
+        <div>
+          <p class="textstyle smallerwords">
+            <span class="colorWords">第一階段－全台海選：</span
+            >2016/04/11－04/29，23:59止 <br />
+            <span class="colorWords">
+              第二階段－TOP12決賽 (最佳人氣/最萌女校服/最鮮男校服)：</span
+            >2016/05/09－05/27，23:59止 <br />
+            <span class="colorWords">得獎公佈：</span>2016/06/08
+            公布於同網頁，敬請密切注意！
+          </p>
+        </div>
+        <div>
+          <img
+            class="up girl desk"
+            src="/codingPractice/RWD-Practice/image/girl1.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="content position-relative">
+        <div class="bigDotdiv up">
+          <p class="bigDot">賽程 <span>說明</span></p>
+        </div>
+
+        <div class="textstyle">
+          <p>
+            <span class="colorWords">第一階段到全台海選：</span
+            >請進入制服地圖活動頁面，登入FB帳號即可投票，每日每帳號可投20票，同項目不可重複投票。
+            <br />
+            <span class="colorWords"
+              >第二階段－TOP12決賽(最佳人氣/最萌女校服/最鮮男校服)：</span
+            >請進入 SETN.com
+            三立新聞網活動頁面，登入FB帳號即可投票，每小時每帳號可投6票，同項目不可重複投票。
+          </p>
+          <div class="right">
+            <img
+              class="mobile"
+              src="/codingPractice/RWD-Practice/image/way_mobile.jpg"
+            />
+            <img
+              class="desk"
+              src="/codingPractice/RWD-Practice/image/way_p.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div>
+          <img
+            class="up girl2 desk"
+            src="/codingPractice/RWD-Practice/image/girl2.png"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="content position-relative">
+        <div class="bigDotdiv up">
+          <p class="bigDot">活動 <span>獎項</span></p>
+        </div>
+
+        <div>
+          <p class="textstyle padding">
+            <span class="colorWords">參加獎：</span>
+            凡參加投票者皆具備抽獎資格，共11名。 <br />
+            <span class="colorWords">神準獎：</span
+            >精準預測前12強之投票者，即有機會獲得OOOOO，共XX名。
+            <br />
+            <span class="colorWords">應援獎：</span
+            >應援冠軍隊伍之投票者，即有機會獲得OOOOO，共XX名。 <br />
+            <span class="colorWords">讚聲獎：</span
+            >活動期間，分享活動訊息至FB皆具備抽獎資格，共XX名。
+          </p>
+        </div>
+      </div>
+      <div class="content position-relative">
+        <div class="bigDotdiv up">
+          <p class="bigDot">注意 <span>事項</span></p>
+        </div>
+        <div>
+          <ol class="textstyle smallerwords unstyled">
+            <li>
+              <span class="colorWords">01.</span>
+              &emsp;參賽者及參與投票網友所提供之個人資料，僅作為抽獎、寄發中獎通知及主辦單位寄發相關資訊使用。每人僅限一次中獎的機會，如發現重複中獎之情況或冒用他人姓名參加活動，將取消重複中獎資格。
+            </li>
+            <li>
+              <span class="colorWords">02.</span>
+              &emsp;得獎將公布於活動網頁，中獎者將以Facebook登錄的Email進行mail通知，若在期限內未回覆正確聯絡資料者，視同放棄中獎資格。
+            </li>
+            <li>
+              <span class="colorWords">03.</span>
+              &emsp;請確認您的得獎回傳通知所填寫的聯絡及地址資料，所有資料皆會保密，只作為獎品寄送依據。逾時未修改正確寄送地址、或因資料填寫不完整或不正確導致無法通知中獎時，將視為放棄領獎資格，獎項不另行補發。
+            </li>
+            <li>
+              <span class="colorWords">04.</span>
+              &emsp;如有任何因電腦、網路、電話、技術或不可歸責於主辦單位之事由，而使寄予得獎人之獎品有遲延、遺失、錯誤、無法辨識或毀損之情況，主辦單
+              位不負任何法律責任，參加者亦不得因此異議。
+            </li>
+            <li>
+              <span class="colorWords">05.</span>
+              &emsp;活動之獎品以寄送的實物為準，獎品不得轉換、轉讓或折換現金。得獎者應依政府規定，獎品價值超過NT$20,000以上，依國稅局規定需繳交10%稅金。
+            </li>
+            <li>
+              <span class="colorWords">06.</span>
+              &emsp;本活動為公開良性競賽性質，參賽者不得有舞弊、或惡意攻擊訐等情事。如有以下行為主辦單位有權取消參加資格，並保留相關法律追訴權利：使用不當行為或程式灌票或干擾活動進行、傳播不實謠言，造成本活動或本公司名譽受損、違反本活動辦法及政府法令之行為等。
+            </li>
+            <li>
+              <span class="colorWords">07.</span>
+              &emsp;本活動主辦單位，對本活動網站有絕對的管理權，並就參賽者或投票者之資格及票數有審查之權利；若經審認資格不符或票數有不當、不妥情事者，本活動主辦單位有權取消得獎資格或逕行刪除參賽票數且不予事先告知。
+            </li>
+            <li>
+              <span class="colorWords">08.</span>
+              &emsp;活動辦法載明於本活動網頁中，參加者於參加本活動之同時，即視為同意並遵守本活動相關規範及注意事項。如本活動因不可抗力之特殊原因無法執行時，主辦單位有權決定取消、終止、修改或暫停本活動。主辦單位亦保有修正、暫停或終止本活動之權利，恕不另行通知。
+            </li>
+            <li>
+              <span class="colorWords">09.</span>
+              &emsp;此活動所使用之軟體或程式及網站上所有內容，均由主辦單位擁有其智慧財產權，任何人不得逕自使用、修改、重製、公開播送、改作、散布、發行、公開發表、進行還原工程、解編或反向組譯。若欲引用其內容，必須依法取得本活動主辦單位之正式書面授權。
+            </li>
+            <li class="colorWords">
+              ※本活動並非由Facebook平台贊助、管理及開發，本活動乃由 SETN.com
+              三立新聞網/制服地圖主辦，並透過此活動網頁所提供的活動管理服務來舉辦、管理本活動，您在本活動所做的行為，與所提供的資料僅提供予主辦單位管理本活動使用。
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="flex footerstyle footercontainer">
+        <div class="footercontainer flex">
+          <div class="Dotdiv">
+            <p class="Dot">執行<span>單位</span></p>
+          </div>
+
+          <li class="footerli">
+            <a href="" class="center">
+              <img
+                class="imgheigh"
+                src="/codingPractice/RWD-Practice/image/f_um.png"
+                alt=""
+              />
+            </a>
+          </li>
+          <li class="footerli">
+            <a href="" class="center">
+              <img
+                class="imgheigh"
+                src="/codingPractice/RWD-Practice/image/f_setn.png"
+                alt=""
+              />
+            </a>
+          </li>
+          <li class="footerli">
+            <a href="" class="center">
+              <img
+                class="imgheigh"
+                src="/codingPractice/RWD-Practice/image/f_st.png"
+                alt=""
+              />
+            </a>
+          </li>
+
+          <div class="Dotdiv">
+            <p class="Dot">特別<span>感謝</span></p>
+          </div>
+          <li class="footerli">
+            <a href="" class="center">
+              <img
+                class="imgheigh"
+                src="/codingPractice/RWD-Practice/image/f_ga.png"
+                alt=""
+              />
+            </a>
+          </li>
+          <li class="footerli">
+            <a href="" class="center">
+              <img
+                class="imgheigh"
+                src="/codingPractice/RWD-Practice/image/f_swanky.png"
+                alt=""
+              />
+            </a>
+          </li>
+          <li class="footerli">
+            <a href="" class="center">
+              <img
+                class="imgheigh"
+                src="/codingPractice/RWD-Practice/image/f_aken.png"
+                alt=""
+              />
+            </a>
+          </li>
+        </div>
+      </div>
+      <p class="s">© 2016 SANLIH E-TELEVISION</p>
+    </footer>
+  </body>
+</html>

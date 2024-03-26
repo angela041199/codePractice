@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 768" style="enable-background:new 0 0 1024 768;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:0.6483;stroke-miterlimit:10;}
+	.st2{opacity:0.2;fill:#C8C9CB;stroke:#FFFFFF;stroke-width:0.6483;stroke-miterlimit:10;enable-background:new    ;}
+	.st3{clip-path:url(#SVGID_4_);}
+	.st4{fill:#DDDEE0;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:0.6483;stroke-miterlimit:10;stroke-dasharray:6.4831,3.8898;}
+	.st6{opacity:0.5;fill:#C8C9CB;enable-background:new    ;}
+	.st7{opacity:0.5;fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;enable-background:new    ;}
+	.st8{fill:none;stroke:#FFFFFF;stroke-width:0.6167;stroke-miterlimit:10;stroke-dasharray:9.8674,6.1671;}
+	.st9{fill:none;stroke:#FFFFFF;stroke-width:0.6483;stroke-miterlimit:10;stroke-dasharray:8.8416,5.526;}
+	.st10{fill:none;}
+	.st11{fill:none;stroke:#FFFFFF;stroke-width:0.7015;stroke-miterlimit:10;stroke-dasharray:7.0149,4.209;}
+	.st12{fill:#FFFFFF;}
+	.st13{opacity:0.1;fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.6483;stroke-miterlimit:10;enable-background:new    ;}
+	.st14{opacity:0.7;fill:none;stroke:#FFFFFF;stroke-width:0.6483;stroke-miterlimit:10;stroke-dasharray:6.4831,3.8898;}
+</style>
+<g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<rect id="SVGID_1_" y="-1266.6" width="1694.7" height="808.5"/>
+				</defs>
+				<clipPath id="SVGID_2_">
+					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+				</clipPath>
+				<g class="st0">
+					<polygon class="st1" points="172.2,-589.3 651.6,-866.1 1131,-589.3 1131,-35.8 651.6,241 172.2,-35.8 					"/>
+					<polygon class="st1" points="172.2,-450.7 651.6,-727.5 1131,-450.7 1131,102.8 651.6,379.6 172.2,102.8 					"/>
+					<polygon class="st2" points="961.3,-756.6 1398.7,-1009.1 1836,-756.6 1836,-251.6 1398.7,0.9 961.3,-251.6 					"/>
+					<polygon class="st2" points="523.6,-296.1 961,-548.6 1398.3,-296.1 1398.3,208.9 961,461.4 523.6,208.9 					"/>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<g>
+				<defs>
+					<rect id="SVGID_3_" x="-0.5" y="-0.5" width="1024" height="768"/>
+				</defs>
+				<clipPath id="SVGID_4_">
+					<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+				</clipPath>
+				<g class="st3">
+					<rect x="74" y="-116.7" class="st4" width="1646.3" height="1046.8"/>
+					<polyline class="st5" points="1131,372.8 1817.4,-27 1825.3,-843.3 1131,-1244.1 436.8,-843.3 436.8,-41.7 961.5,233.5 					
+						"/>
+					<polygon class="st1" points="172.2,637.7 651.6,360.9 1131,637.7 1131,1191.2 651.6,1468 172.2,1191.2 					"/>
+					<polygon class="st1" points="172.2,776.3 651.6,499.5 1131,776.3 1131,1329.8 651.6,1606.6 172.2,1329.8 					"/>
+					<polygon class="st2" points="961.3,470.4 1398.7,217.9 1836,470.4 1836,975.4 1398.7,1227.9 961.3,975.4 					"/>
+					<polygon class="st2" points="523.6,930.9 961,678.4 1398.3,930.9 1398.3,1435.9 961,1688.4 523.6,1435.9 					"/>
+					<polygon class="st2" points="-344.1,-74.8 93.3,-327.3 530.6,-74.8 530.6,430.2 93.3,682.7 -344.1,430.2 					"/>
+					<polygon class="st6" points="-383.1,-283.1 74,-535.6 531,-283.1 531,221.9 74,474.4 -383.1,221.9 					"/>
+					<line class="st7" x1="74" y1="474.4" x2="531" y2="221.9"/>
+					<line class="st5" x1="961.9" y1="233.5" x2="1133" y2="131.8"/>
+					<line class="st8" x1="531.4" y1="430" x2="531.4" y2="813"/>
+					<g>
+						<g>
+							<line class="st1" x1="531.3" y1="222.1" x2="531.3" y2="217.6"/>
+							<line class="st9" x1="531.3" y1="212.1" x2="531.3" y2="-58.1"/>
+						</g>
+					</g>
+					<rect y="-39.6" class="st10" width="1694.7" height="808.5"/>
+					<line class="st11" x1="961.9" y1="510.4" x2="961.9" y2="233"/>
+					<rect x="-40" y="-45" class="st12" width="1071" height="66"/>
+				</g>
+			</g>
+		</g>
+		<polygon class="st13" points="74,21 313.8,21 314.7,341.4 74,474.4 		"/>
+	</g>
+</g>
+<image style="overflow:visible;" width="1080" height="608" xlink:href="../../../../2022 帶人BANNER1080X608.jpg"  transform="matrix(1 0 0 1 1209 114)">
+</image>
+<line class="st1" x1="74" y1="474.4" x2="531" y2="221.9"/>
+<line class="st14" x1="74" y1="277.7" x2="531" y2="25.2"/>
+<line class="st5" x1="74" y1="278.4" x2="0" y2="237.5"/>
+</svg>

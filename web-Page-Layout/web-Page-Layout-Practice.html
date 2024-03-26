@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="icon" type="image/x-icon" href="/image/check.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>帶人的技術</title>
+    <style>
+      :root {
+        --font-color: white;
+        --font-color-dark: rgb(0, 0, 0);
+        --font-color-or: rgb(242, 115, 32);
+        --font-color-g: rgb(79, 79, 81);
+        --font-color-lig: #b3b3b3;
+        --font-size: 2.25rem;
+        --icon-size: 200px;
+      }
+      .fontstyle {
+        font-size: var(--font-size);
+        color: var(--font-color);
+        text-align: center;
+        font-weight: 600;
+      }
+      .fontstyle-bk {
+        font-size: var(--font-size);
+        color: var(--font-color-dark);
+        text-align: center;
+        font-weight: 600;
+      }
+      .largerfont {
+        font-size: 2rem;
+        font-weight: 600;
+        font-style: normal;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      /* header */
+      header {
+        width: 100%;
+        height: 10vh;
+        background: rgb(28, 28, 28);
+        position: fixed;
+        z-index: 99;
+      }
+      .md img {
+        width: 200px;
+      }
+      h2 {
+        font-size: 1.75rem;
+        line-height: 1.5;
+        color: var(--font-color-lig);
+        margin: 0;
+      }
+      h3 {
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: var(--font-color-or);
+        margin: 0;
+        padding-bottom: 3%;
+      }
+
+      h4 {
+        color: var(--font-color);
+        text-align: center;
+      }
+      h5 {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      h6 {
+        font-size: 1.125rem;
+        margin: 0.5rem 0;
+      }
+      header img {
+        width: 300px;
+      }
+      .header {
+        margin: 0 auto;
+        padding: 0 5%;
+        height: 10vh;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .style-clearned {
+        list-style: none;
+        align-items: center;
+      }
+      header .navbar {
+        display: block;
+      }
+
+      header .navbar ul {
+        display: flex;
+      }
+      a {
+        text-decoration: none;
+        color: var(--font-color);
+        margin: 0 1rem;
+        font-size: 1rem;
+        font-weight: bolder;
+      }
+      header .navbar ul a img {
+        width: 35px;
+      }
+      /* style */
+      .red-btn {
+        background: #a6191e;
+        border-radius: 10rem;
+        margin: 0 0.2rem;
+        padding: 0.2rem 0.8rem;
+      }
+      .en-title {
+        color: var(--font-color-dark);
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-style: italic;
+        text-align: center;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .en-title-wh {
+        color: var(--font-color);
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-style: italic;
+        text-align: center;
+        margin: 0;
+        line-height: 1.5;
+      }
+      .background {
+        width: 100%;
+        /* height: 100vh; */
+        /* background: url(/homework/image/lead_bg.svg); */
+        position: fixed;
+        z-index: -5;
+        top: 0;
+      }
+
+      .top {
+        max-width: 1110px;
+        /* height: 80vh; */
+        margin: 0 auto;
+        /* background: url(/homework/image/top5.svg) no-repeat; */
+        object-fit: cover;
+        padding-top: 9rem;
+        padding-bottom: 4rem;
+      }
+
+      /* section */
+      section.mem,
+      section.ta {
+        width: 100%;
+        /* height: 15vh; */
+        background: var(--font-color-g);
+        display: flex;
+        justify-content: space-around;
+      }
+      .section-flex {
+        display: flex;
+        align-items: center;
+      }
+      section img {
+        width: 60px;
+        margin: 15px 0;
+      }
+      .section-font {
+        color: var(--font-color);
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .flex {
+        display: flex;
+      }
+      /* section-ta */
+      section.ta {
+        width: 100%;
+        background: black;
+        height: 204px;
+      }
+      section.ta .contain {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+        padding: 3rem 0;
+        align-items: start;
+      }
+      section.ta .ta-text {
+        padding: 0 15px;
+      }
+      section.ta .member {
+        width: 285px;
+        /* height: 108px; */
+        padding: 0.15px;
+      }
+      section.ta .member h3 {
+        color: var(--font-color-or);
+        font-size: 24px;
+        margin: 0;
+        /* font-weight: 600; */
+      }
+      section.ta .contain .member p {
+        color: var(--font-color);
+        margin: 1rem 0 0 0;
+      }
+      .learn {
+        background: var(--font-color-g);
+        padding: 48px 0;
+      }
+
+      .learn-icon {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 1110px;
+        /* align-items: center; */
+        margin-inline: auto;
+        justify-content: space-evenly;
+      }
+      .preview {
+        /* padding: 0 15px; */
+        margin: 0 auto;
+        min-height: 100%;
+        max-width: 1110px;
+        height: 650px;
+        overflow: hidden;
+      }
+      iframe {
+        padding-top: 3%;
+        width: 100%;
+        height: 100%;
+      }
+      section.agenda {
+        background: rgba(255, 255, 255, 0.5);
+        padding: 3rem 0;
+        & .agenda-content {
+          max-width: 1110px;
+          margin: 0 auto;
+        }
+      }
+      .agenda-top {
+        padding-bottom: 3%;
+      }
+
+      .classflex {
+        margin: 0 auto;
+      }
+      .class {
+        background: var(--font-color-g);
+        text-align: center;
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        padding: 16px 4px 16px 4px;
+        & h5 {
+          color: var(--font-color-lig);
+        }
+      }
+      .class1 {
+        background: var(--font-color-or);
+        text-align: center;
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        padding: 16px 4px 16px 4px;
+        & h5,
+        h2 {
+          color: var(--font-color);
+        }
+      }
+      .classblock {
+        /* background: var(--font-color-or); */
+        border: 2px solid var(--font-color-or);
+        /* text-align: center; */
+        /* display: block; */
+        & .content {
+          & .font {
+            font-size: larger;
+            font-weight: bolder;
+            background: var(--font-color-or);
+            color: var(--font-color);
+            padding: 0.85rem 0;
+            text-align: center;
+          }
+        }
+      }
+      .contentflex {
+        display: flex;
+        & .content-img {
+          flex: 2 1 0;
+          padding: 1rem;
+          & img {
+            width: 100%;
+          }
+        }
+        & .content-text {
+          flex: 3 1 0;
+          margin: auto 0;
+          padding: 1rem;
+        }
+      }
+
+      .content-text > ul > li {
+        margin: 10px 0;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .teacher {
+        margin: 0 auto;
+        min-height: 100%;
+
+        padding: 1.5rem 0;
+        background: var(--font-color);
+      }
+      .teacherinto {
+        max-width: 1110px;
+        margin: 0 auto;
+      }
+      .intocontentflex {
+        display: flex;
+        justify-content: center;
+
+        & .content-img {
+          flex: 0 0 25%;
+
+          & img {
+            width: 100%;
+            margin: 0;
+          }
+        }
+        & .intocontent-text {
+          flex: 0 0 60%;
+          /* margin: auto 0; */
+          padding: 0 1rem;
+          & h3 {
+            color: var(--font-color-dark);
+          }
+          & h6 {
+            margin: 0;
+          }
+          & p {
+            color: var(--font-color-dark);
+          }
+        }
+      }
+      .courseinfo {
+        background: var(--font-color-dark);
+        padding: 3rem 0;
+      }
+      .recommend {
+        padding: 3rem 0;
+        & > div {
+          padding-bottom: 2rem;
+        }
+      }
+      .recommendinto {
+        display: flex;
+        /* flex: 3 0 0; */
+        margin: 0 auto;
+        max-width: 1110px;
+
+        & .content-img {
+          flex: 1 0 0;
+          /* padding: 0 1rem; */
+          & img {
+            width: 100%;
+            margin: 0;
+          }
+        }
+      }
+      .recommend-text {
+        padding: 0 2rem;
+        & > h3 {
+          color: var(--font-color-dark);
+        }
+      }
+      .teacherinfo {
+        color: var(--font-color);
+      }
+      .ticketcontenter {
+        display: flex;
+        justify-content: space-between;
+      }
+      .ticket {
+        background: var(--font-color);
+        color: var(--font-color-g);
+        border-radius: 5px;
+        padding: 12px 24px;
+        margin: 1rem 0;
+        width: 23%;
+        text-align: center;
+      }
+      .intocontent-text > h3 {
+        padding: 0;
+        margin-bottom: 8px;
+        color: var(--font-color);
+        & > em {
+          color: var(--font-color-or);
+          font-style: normal;
+        }
+      }
+      .intocontent-text > p {
+        color: var(--font-color);
+      }
+      .feedback {
+        /* background: white; */
+        padding: 3rem 0;
+        position: relative;
+        text-align: center;
+        & > .fontstyle {
+          color: var(--font-color-dark);
+        }
+        & > .text {
+          padding: 2rem 0 3rem 0;
+        }
+      }
+      .bg {
+        width: 100%;
+        height: 100%;
+
+        background: #fffbf3;
+        overflow: hidden;
+        /* margin: 0 0 0 -60px; */
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0rem auto;
+        z-index: -1;
+      }
+      .object-fit-cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0;
+        opacity: 0.3;
+      }
+      .caution {
+        background: var(--font-color-lig);
+        padding: 2rem 0;
+
+        & p {
+          margin: 0;
+        }
+      }
+      .cautioninfo {
+        max-width: 1110px;
+        margin-inline: auto;
+        & h4 {
+          color: var(--font-color-dark);
+          font-size: 1.5rem;
+          text-align: left;
+          margin: 1rem 0;
+        }
+      }
+      footer {
+        background: var(--font-color-dark);
+        padding: 1.5rem 0;
+        & h5,
+        p {
+          color: var(--font-color);
+          /* margin: 0.5rem 0; */
+          text-align: center;
+        }
+        & p {
+          font-size: 0.8rem;
+          padding-top: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header flex">
+        <a
+          class="headerimage"
+          href="https://biz-school.bnextmedia.com.tw/business-manager?_gl=1*b8wzg5*_ga*NjMyODY4MjUzLjE2OTg1Njc1OTg.*_ga_383SSRZR6Z*MTY5ODg0NTg0Ni43LjAuMTY5ODg0NTg0Ni42MC4wLjA.*_ga_G9MHY2DC1W*MTY5ODg0NTg0Ni43LjAuMTY5ODg0NTg0Ni4wLjAuMA.."
+        >
+          <img
+            src="/codingPractice/RWD-Practice/image/mtschool-logo-21.png"
+            alt=""
+          />
+        </a>
+        <div class="navbar">
+          <ul class="style-clearned">
+            <li><a href="">精彩課綱</a></li>
+            <li><a href="">課程資訊</a></li>
+            <li><a href="">常見問題</a></li>
+            <li><a href="">課程團票</a></li>
+            <li><a class="red-btn" href="">已報名滿額，我要候補</a></li>
+            <li>
+              <a href=""
+                ><img src="/codingPractice/RWD-Practice/image/fb.png" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="background">
+      <img src="/codingPractice/RWD-Practice/image/lead_bg.svg" alt="" />
+    </div>
+    <div class="top" title="帶人的技術：教練領導學 X 關鍵指導力">
+      <img src="/codingPractice/RWD-Practice/image/top5.svg" alt="" />
+    </div>
+    <section class="mem">
+      <div class="section-left section-flex">
+        <img src="/codingPractice/RWD-Practice/image/check.png" alt="" />
+        <h5 class="section-font">2大標準職能進修</h5>
+      </div>
+      <div class="section-mid section-flex">
+        <img src="/codingPractice/RWD-Practice/image/check.png" alt="" />
+        <h5 class="section-font">4900名以上主管參訓</h5>
+      </div>
+      <div class="section-right section-flex">
+        <img src="/codingPractice/RWD-Practice/image/check.png" alt="" />
+        <h5 class="section-font">97%以上滿意推薦</h5>
+      </div>
+    </section>
+    <section class="ta">
+      <div class="contain">
+        <div class="ta-text fontstyle">這堂課適合誰？</div>
+        <div class="member">
+          <h3>企業經營者</h3>
+          <p>
+            透過有效的溝通與步驟，<br />
+            讓團隊主動成長
+          </p>
+        </div>
+        <div class="member">
+          <h3>部門、業務經理人</h3>
+          <p>
+            運用精準話術，<br />
+            在不同情境發揮影響力
+          </p>
+        </div>
+        <div class="member">
+          <h3>新任初中階主管</h3>
+          <p>
+            掌握帶人技巧，<br />
+            建立與部屬的信任關係
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="learn">
+      <div class="fontstyle">你將在這堂課學會...</div>
+      <div class="learn-icon">
+        <div class="md">
+          <img src="/codingPractice/RWD-Practice/image/icon-ana.svg" alt="" />
+          <h4>
+            領導情境解析<br />
+            拆解常見團隊難題
+          </h4>
+        </div>
+        <div class="md">
+          <img src="/codingPractice/RWD-Practice/image/icon-bar.svg" alt="" />
+          <h4>
+            領導情境解析<br />
+            拆解常見團隊難題
+          </h4>
+        </div>
+        <div class="md">
+          <img src="/codingPractice/RWD-Practice/image/icon-talk.svg" alt="" />
+          <h4>
+            領導情境解析<br />
+            拆解常見團隊難題
+          </h4>
+        </div>
+        <div class="md">
+          <img
+            src="/codingPractice/RWD-Practice/image/icon-manager.svg"
+            alt=""
+          />
+          <h4>
+            領導情境解析<br />
+            拆解常見團隊難題
+          </h4>
+        </div>
+      </div>
+    </section>
+    <section class="preview">
+      <div class="fontstyle-bk">課程重點搶先看</div>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/aQNPdGgZkJA?si=KRo635MB0zVwz4-m&amp;start=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </section>
+    <section class="agenda">
+      <div class="agenda-content">
+        <div class="agenda-top">
+          <div class="fontstyle-bk">精彩課綱</div>
+          <h3 class="en-title">- Agenda -</h3>
+        </div>
+        <div class="classflex flex">
+          <div class="class">
+            <div class="content">
+              <h2>9/22教練領導學 【額滿關閉】</h2>
+              <h5>09:30~17:00</h5>
+            </div>
+          </div>
+          <div class="class1">
+            <div class="content">
+              <h2>10/20關鍵指導力 【最後席位】</h2>
+              <h5>09:30~17:00</h5>
+            </div>
+          </div>
+        </div>
+        <div class="classblock">
+          <div class="content">
+            <div class="font">破解管理困境 X 立即改善問題</div>
+            <div class="contentflex">
+              <div class="content-img">
+                <img
+                  src="/codingPractice/RWD-Practice/image/lead-info3.svg"
+                  alt=""
+                />
+              </div>
+
+              <div class="content-text">
+                <h3>精準對話策略</h3>
+                <ul>
+                  <li>職場溝通與執行：語言的力量，讚美與激勵</li>
+                  <li>共識達成三步驟：解讀特質、理解部屬、雙贏溝通</li>
+                  <li>情境演練 - 四大回應技巧</li>
+                </ul>
+                <h3>讓責備成為有效激勵</h3>
+                <ul>
+                  <li>建設性批評的藝術：批評三大原則</li>
+                  <li>建立安全與信賴感：四大彈性行為</li>
+                  <li>有效指導工作關鍵：正向回饋+釋義法運用</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="teacher">
+      <div class="teacherinto">
+        <div class="fontstyle-bk">講師介紹</div>
+        <h3 class="en-title">- Speaker -</h3>
+        <div class="intocontentflex">
+          <div class="content-img">
+            <img
+              src="/codingPractice/RWD-Practice/image/speaker_01.png"
+              alt=""
+            />
+          </div>
+
+          <div class="intocontent-text">
+            <h3>陳煥庭</h3>
+            <h6>起初國際台灣分公司 執行長</h6>
+            <p>
+              國內深層溝通的權威講師，擅長教練式領導與團隊激勵，知識理論和實用技巧同時掌握。<br />
+              一萬場以上授課經歷，合作企業如台積電、星巴克與中國信託等。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="courseinfo">
+      <div class="teacherinto">
+        <div class="fontstyle">課程資訊</div>
+        <h3 class="en-title-wh">- Course -</h3>
+        <div class="intocontent-text">
+          <h3>活動時間： 9/22、10/20，09:30~17:00</h3>
+          <h3>活動地點：張榮發國際會議中心(台北市中正區中山南路11號)</h3>
+          <h3><em>票價費用：</em></h3>
+          <div class="ticketcontenter">
+            <div class="ticket">
+              <p>雙日票價最優惠</p>
+              <p>NT. <em class="largerfont">7,400</em></p>
+            </div>
+            <div class="ticket">
+              <p>雙日票價最優惠</p>
+              <p>NT. <em class="largerfont">4,000 /人</em></p>
+            </div>
+            <div class="ticket">
+              <p>雙日票價最優惠</p>
+              <p>NT. <em class="largerfont">3,700 /人</em></p>
+            </div>
+            <div class="ticket">
+              <p>雙日票價最優惠</p>
+              <p><em class="largerfont">4,500 /人</em></p>
+            </div>
+          </div>
+          <p>
+            ※9/22課程已結束並關閉報名，歡迎填寫候補表單，如再開課將先通知您！
+          </p>
+          <p>
+            ※10/20課程已額滿並暫時關閉報名，如有興趣，歡迎填寫候補表單，有座位釋出將先通知您！
+          </p>
+          <br />
+          <p>本課程附午餐並加贈《經理人月刊》3期，2023年11月號起算</p>
+          <p>
+            活動洽詢：02-8773-9808 <br />
+            #分機355 楊小姐 ｜ karen.yang@managertoday.com.tw
+          </p>
+          <p>
+            主辦單位保留活動及課程大綱異動之權利，更新資訊以活動網站內容為主。
+          </p>
+          <p>
+            客服專線：02-8771-6326 服務時間：週一到週五9:30~12:00；13:30~17:00
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="recommend">
+      <div class="fontstyle-bk">課程推薦</div>
+      <div class="recommendinto">
+        <div class="intocontentflex">
+          <div class="content-img">
+            <img
+              src="/codingPractice/RWD-Practice/image/1109fb_N.jpeg"
+              alt=""
+            />
+          </div>
+
+          <div class="recommend-text">
+            <h3>【年底唯一｜主管實戰課】</h3>
+            <h6>
+              重量級講師實務分享！3大主題X10管理情境 <br />
+              6小時學會團隊帶領的關鍵，打造高戰力
+            </h6>
+            <p>
+              3大課程亮點你絕對不能錯過： <br />
+              🎯 針對個別部屬，短時間綜合判斷最有效的帶人、留才策略 <br />
+              🎯 透析職場管理問題：養成上下一心的當責團隊，持續成長 <br />
+              🎯 重塑領導思維，保持靈活彈性，打造高滿意、高產出的組織
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="feedback">
+      <figure class="bg">
+        <img
+          class="object-fit-cover"
+          src="/codingPractice/RWD-Practice/image/bg01.jpg"
+        />
+      </figure>
+
+      <div class="fontstyle">學員回饋</div>
+      <h3 class="en-title">- Feedback -</h3>
+      <div class="text">
+        <h5>重點化整理、清晰的理解例子，讓大家易懂易學。</h5>
+        <p>關鍵指導力/資通訊/網路服務/高階主管</p>
+      </div>
+    </section>
+    <section class="caution">
+      <div class="cautioninfo">
+        <h4>課程提醒/公告</h4>
+        <h6>
+          🚨課程如期開辦，因應新型冠狀病毒，活動現場全面升級防疫作業標準：
+        </h6>
+        <p>
+          1. 第一線工作人員全面配戴口罩，並皆已完成接種三劑疫苗。 <br />
+          2. 活動前主辦單位將確保會場桌面、麥克風、手把等均以酒精、清潔液消毒。
+          <br />
+          3.
+          課程與會者請全程戴口罩。如有居家檢疫、居家隔離、自主健康管理期間者，及有發燒、呼吸道症狀、腹瀉、嗅味覺異常者，不開放入場，請於課前聯繫我們協助您相關事宜。<br />
+          4.
+          報到前請配合實聯制、量額溫、酒精消毒後方可入場（若超過37.5度，將婉拒入場）。
+        </p>
+      </div>
+    </section>
+    <footer>
+      <h5>
+        Bnext Media 媒體群 | 數位時代 經理人 Shopping Design 創業小聚 未來商務
+      </h5>
+      <p>
+        © 2021 Business Next Media Corp. All Rights Reserved. 106
+        台北市大安區光復南路102號9樓
+      </p>
+    </footer>
+  </body>
+</html>

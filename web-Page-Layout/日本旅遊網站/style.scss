@@ -1,0 +1,218 @@
+$themeColor: rgba(126, 83, 255, 0.878);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body {
+  img.FixedImage {
+    min-height: 100vh;
+    position: fixed;
+    width: 100%;
+    z-index: -10;
+  }
+  header {
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0rem 1rem;
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    box-shadow: 0 10px 6px -6px #7777775a;
+
+    section.logo {
+      display: flex;
+      flex: 2 1 400px;
+      align-items: center;
+      // border: 2px solid salmon;
+      img {
+        width: 6vw;
+        height: 6vw;
+      }
+      h1 {
+        font-size: 2.4rem;
+      }
+    }
+    nav {
+      flex: 5 1 500px;
+      // border: 2px solid green;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        list-style-type: none;
+        margin: 0.5rem 0rem;
+        li {
+          a {
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: rgb(15, 15, 15);
+            padding-bottom: 0.3rem;
+            transition: 0.2s ease;
+
+            &:hover {
+              color: $themeColor;
+              border-bottom: 3px solid $themeColor;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section.background {
+      background-image: url(../images/日本櫻花.jpg);
+      // border: 1px solid blue;
+      min-height: 70vh;
+      background-size: cover;
+      position: relative;
+      background-position: center;
+      transition: all 0.7s ease;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      div.filter {
+        background-color: #00000076;
+        width: 100%;
+        min-height: 70vh;
+        position: absolute;
+      }
+      h3 {
+        color: rgb(255, 255, 255);
+        font-size: 2rem;
+        text-align: center;
+        z-index: 1;
+        // margin: 5rem;
+      }
+    }
+    section.info {
+      background-color: rgb(255, 255, 255);
+      padding: 1rem 0rem;
+      h3 {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+      div.circles {
+        // border: 2px solid palevioletred;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        div.circle {
+          // border: 2px solid rgb(112, 216, 181);
+          padding: 1rem;
+          flex: 0 1 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          img {
+            width: 80%;
+            border-radius: 50%;
+            padding: 0.3rem;
+            margin-bottom: 0.5rem;
+            transition: 0.3s ease;
+            &:hover {
+              border: 4px solid $themeColor;
+            }
+          }
+        }
+      }
+    }
+
+    section.EmptyContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 60vh;
+      background-color: #00000070;
+      p {
+        color: #ffffff;
+        font-size: 2rem;
+        padding: 2rem;
+      }
+    }
+    section.map {
+      background-color: #ffffff;
+      //    text-align: center;
+      padding: 1rem 2rem;
+      h2 {
+        text-align: center;
+      }
+      p {
+        margin: 1rem 0rem;
+      }
+      iframe {
+        width: 100%;
+        height: 40vh;
+      }
+    }
+  }
+  footer {
+    background-color: #00000070;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+    section.logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        color: #ffffff;
+        padding: 1rem;
+        font-size: 2rem;
+      }
+      img {
+        width: 20vw;
+        margin-top: 1rem;
+      }
+    }
+    section.links {
+      a {
+        img {
+          width: 5vh;
+          margin: 1rem;
+        }
+      }
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $themeColor;
+}

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NinjaMail</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Raleway:wght@500;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .mainBg {
+        background: url(/image/BG\ stuff.png) no-repeat;
+        background-position: top center;
+      }
+
+      .section-height {
+        max-width: 1098px;
+        max-height: 533px;
+      }
+      .titlefont {
+        font-family: "Playfair Display", serif;
+        font-size: 60px;
+        font-weight: 900;
+      }
+      .logofont {
+        font-family: "Raleway", sans-serif;
+        font-weight: 900;
+        font-size: 35px;
+      }
+      .navfont {
+        font-family: "Raleway", sans-serif;
+        font-weight: 800;
+        font-size: 17px;
+      }
+      .logo1 {
+        margin-top: 0.7rem;
+        width: 129px;
+        height: 64px;
+      }
+      .logo {
+        width: 92px;
+        height: 45px;
+        margin-top: 0.4rem;
+      }
+      .textfont {
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        font-size: 19px;
+      }
+      .buttonfont {
+        font-family: "Raleway", sans-serif;
+        font-weight: 900;
+        font-size: 21px;
+      }
+      .cardfont {
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .card-size {
+        max-width: 320px;
+        /* height: 449px; */
+      }
+      .cardsty {
+        border-radius: 0%;
+        border: 0px;
+      }
+      .Sec3Text {
+        max-width: 365px;
+      }
+      /* .card-body {
+        max-height: 196px;
+      } */
+      .SecTxt {
+        font-family: "Playfair Display", serif;
+        font-size: 44px;
+        font-weight: 900;
+      }
+      .Sec4Txt {
+        font-family: "Raleway", sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        padding-right: 3rem;
+      }
+      .object-fit-cover {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+
+      header {
+        height: 102px;
+      }
+      .hero-img {
+        width: 680px;
+        height: 383px;
+      }
+      .hero {
+        margin-top: 2rem;
+        margin-bottom: 10rem;
+      }
+      .hero-l {
+        left: 0;
+      }
+      .float {
+        float: right;
+      }
+
+      .section2 {
+        max-width: 944px;
+        /* height: 531px; */
+        top: 867px;
+        left: 248px;
+      }
+      .btn-r {
+        border-radius: 0%;
+      }
+      .sec4sub-title {
+        font-family: "Raleway", sans-serif;
+        font-weight: 900;
+        font-size: 34px;
+      }
+      .Sec,
+      .Sec3 {
+        max-width: 1098px;
+        /* height: 533px; */
+      }
+      .relative {
+        position: relative;
+      }
+      .textPosition {
+        bottom: 1rem;
+      }
+      .Sec4 {
+        max-width: 1089px;
+        /* height: 530px;
+        top: 2162px;
+        left: 174px; */
+      }
+      .Sec4img {
+        max-width: 342px;
+        max-height: 239px;
+      }
+
+      li {
+        list-style: none;
+      }
+
+      .footerTxt {
+        font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 0.5rem;
+      }
+
+      @media screen and (max-width: 768px) {
+        .navfont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 800;
+          font-size: 11px;
+        }
+
+        .logo1 {
+          margin-top: 0.7rem;
+          width: 84px;
+          height: 42px;
+        }
+        .logo {
+          width: 60px;
+          height: 30px;
+          margin-top: 0.4rem;
+        }
+        .logofont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 900;
+          font-size: 22px;
+        }
+        .hero-img {
+          width: 445px;
+          height: 250px;
+        }
+
+        .titlefont {
+          font-family: "Playfair Display", serif;
+          font-size: 38px;
+          font-weight: 900;
+        }
+        .textfont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 500;
+          font-size: 12px;
+        }
+        .sec4sub-title {
+          font-family: "Raleway", sans-serif;
+          font-weight: 900;
+          font-size: 22px;
+        }
+        .buttonfont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 900;
+          font-size: 13px;
+        }
+        .cardfont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 500;
+          font-size: 12px;
+        }
+        .SecTxt {
+          font-family: "Playfair Display", serif;
+          font-size: 28px;
+          font-weight: 900;
+        }
+        .Sec3 > div > div {
+          justify-content: end;
+        }
+        .pt-5 {
+          padding-top: 0%;
+        }
+        .container {
+          max-width: 711px;
+        }
+        .Sec4Txt {
+          font-family: "Raleway", sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          padding-right: 3rem;
+        }
+        .footerTxt {
+          font-family: "Raleway", sans-serif;
+          font-weight: 700;
+          font-size: 9px;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        header {
+          height: 65px;
+        }
+
+        .hero {
+          margin-top: 0rem;
+          margin-bottom: 60vw;
+        }
+        .hero-l {
+          margin: 0 1rem;
+        }
+        .gap {
+          margin-top: 60vw;
+        }
+        .pt-0 {
+          padding-top: 0;
+        }
+        .logofont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 900;
+          font-size: 22px;
+        }
+        .logo {
+          width: 60px;
+          height: 30px;
+        }
+        ul.nav {
+          display: none;
+        }
+        .titlefont {
+          font-family: "Playfair Display", serif;
+          font-size: 36px;
+          font-weight: 900;
+        }
+        .textfontPadding {
+          margin-right: 4rem;
+        }
+
+        .textfont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 500;
+          font-size: 14px;
+        }
+        .buttonfont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 900;
+          font-size: 13px;
+        }
+        .cardfont {
+          font-family: "Raleway", sans-serif;
+          font-weight: 500;
+          font-size: 12px;
+        }
+        .Sec3 > div > div {
+          justify-content: end;
+        }
+        .pt-5 {
+          padding-top: 0%;
+        }
+        .hero-img {
+          width: 100%;
+          height: 60vw;
+          margin-top: 6rem;
+        }
+        .Sec4Txt {
+          font-family: "Raleway", sans-serif;
+          font-size: 12px;
+          font-weight: 700;
+          padding-right: 3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="mainBg">
+    <header class="">
+      <nav
+        class="navbar bg-body-tertiary d-flex justify-content-between align-items-center pe-3"
+      >
+        <div class="d-flex align-items-center">
+          <div class="logo1">
+            <img
+              src="/codingPractice/RWD-Practice/image/53b16e9c9138f867a828189389cfc8e7.png"
+              alt="Logo1"
+              class="d-inline-block align-text-center object-fit-cover"
+            />
+          </div>
+          <a class="navbar-brand logofont" href="#"> NinjaMail </a>
+        </div>
+
+        <div class="d-flex mb-1">
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a
+                class="nav-link active navfont text-black border-bottom border-success border-5 px-2 mx-2"
+                aria-current="page"
+                href="#"
+                >FEATURES</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navfont text-black border-bottom border-success border-5 px-2 mx-2"
+                href="#"
+                >PRICING</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navfont text-black border-bottom border-success border-5 px-2 mx-2"
+                href="#"
+                >SERVICES</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link navfont text-black border-bottom border-success border-5 px-2 mx-2"
+                href="#"
+                >PARTNERS</a
+              >
+            </li>
+          </ul>
+          <button
+            type="button"
+            class="btn btn-success navfont text-white px-2 mx-2 btn-r"
+          >
+            SIGN UP FREE
+          </button>
+        </div>
+      </nav>
+    </header>
+    <div class="container hero relative d-flex justify-content-end">
+      <div class="hero-l z-3 position-absolute">
+        <div class="col col-sm-7 pt-4">
+          <h1 class="display-2 titlefont textfontPadding">
+            Create Stunning Email Campaigns
+          </h1>
+        </div>
+
+        <div class="col-sm-6 col pt-2 gap">
+          <p class="textfont">
+            Create and launch email campaigns that captivate your customers in
+            just a few clicks.
+          </p>
+          <div>
+            <button
+              type="button"
+              class="btn btn-success btn-r buttonfont my-3 p-3"
+            >
+              TRY NOW
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-light btn-outline-success border-3 btn-r m-3 p-3 buttonfont"
+            >
+              GET A DEMO
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-img shadow">
+        <img
+          src="/codingPractice/RWD-Practice/image/b3dfbfcf0e383318c4d1ece066278c09.png"
+          class="object-fit-cover"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- <div class="row row-cols-1 row-cols-sm-2"></div> -->
+
+    <div
+      class="container d-flex align-items-center justify-content-center my-3"
+    >
+      <div class="ratio ratio-16x9 my-4">
+        <img
+          src="/codingPractice/RWD-Practice/image/1344684045c78c309cb12f283a9b0562.png"
+          class="object-fit-cover"
+          alt=""
+        />
+      </div>
+      <div class="z-3 position-absolute">
+        <h1 class="display-2 text-light titlefont text-center">
+          Reach More Customers
+        </h1>
+        <div class="col text-center">
+          <button
+            type="button"
+            class="btn btn-light btn-r buttonfont text-success my-3 p-3"
+          >
+            TRY NOW
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container my-5 Sec3">
+      <div class="row g-4">
+        <div class="col-sm">
+          <div class="card-size card cardsty shadow">
+            <img
+              src="/codingPractice/RWD-Practice/image/92e4756c344178a7d2c96accb88468dc.png"
+              class="card-img-top cardsty"
+              alt="..."
+            />
+            <div class="">
+              <div class="p-3 m-3">
+                <p class="cardfont">
+                  Launch campaigns but also find new customers. Our unique
+                  platform handles campaigns from start to end.
+                </p>
+                <a
+                  href="#"
+                  class="text-success text-decoration-none card-a-text"
+                  >Learn More ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm d-flex mt-5 pt-5">
+          <div class="card-size card cardsty shadow">
+            <img
+              src="/codingPractice/RWD-Practice/image/69b0d96c771db28d27924175496c0831.png"
+              class="card-img-top cardsty"
+              alt="..."
+            />
+            <div class="">
+              <div class="p-3 m-3">
+                <p class="cardfont">
+                  Start building and sharing with your team today. NinjaMail is
+                  renowned for its industry leading team collaboration tools.
+                </p>
+                <a
+                  href="#"
+                  class="text-success text-decoration-none card-a-text"
+                  >Learn More ></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm d-flex justify-content-center mt-5 pt-5">
+          <div class="Sec3Text align-items-center py-2">
+            <h1 class="SecTxt">
+              The source for proven, engaging email campaigns
+            </h1>
+            <p class="textfont py-2">
+              Whether you’re a startup, small <br />
+              business, e-commerce store, or <br />
+              want to promote your app, NinjaMail <br />
+              has the feature set tailored for <br />
+              your business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container Sec4">
+      <div class="row g-3">
+        <div class="col-sm relative d-flex justify-content-center">
+          <div class="z-3 position-absolute textPosition">
+            <p class="sec4sub-title text-white m-0">Frankie</p>
+            <p class="Sec4Txt text-white m-0">Member since 2016</p>
+          </div>
+          <div class="Sec4img">
+            <img
+              src="/codingPractice/RWD-Practice/image/bdd21e9da94beaeeb6dd4fed495b9c1c.png"
+              class="object-fit-cover"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col-sm relative d-flex justify-content-center">
+          <div class="z-3 position-absolute textPosition">
+            <p class="sec4sub-title text-white m-0">Camile</p>
+            <p class="Sec4Txt text-white m-0">Member since 2012</p>
+          </div>
+          <div class="Sec4img">
+            <img
+              src="/codingPractice/RWD-Practice/image/61efa0e5af309c0ec33c3593082563c4.jpg"
+              class="object-fit-cover"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="col-sm relative d-flex justify-content-center">
+          <div class="z-3 position-absolute textPosition">
+            <p class="sec4sub-title text-white m-0">Elayne</p>
+            <p class="Sec4Txt text-white m-0">Member since 2018</p>
+          </div>
+          <div class="Sec4img">
+            <img
+              src="/codingPractice/RWD-Practice/image/34577e3c8e8d36f757b75d76debb2881.jpg"
+              class="object-fit-cover"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="col px-5 mx-5 my-4">
+        <div class="my-5">
+          <p class="SecTxt text-center">
+            Learn how others are reaching their audience easier than ever
+            before.
+          </p>
+        </div>
+
+        <div class="container">
+          <div class="row d-flex justify-content-center g-2">
+            <div class="col-12 col-sm-8">
+              <div class="">
+                <input
+                  type="password"
+                  class="form-control buttonfont py-3"
+                  id="inputPassword2"
+                  placeholder="Enter your email"
+                />
+                <label for="inputPassword2" class="text-success"
+                  >Thanks! Email received.</label
+                >
+              </div>
+            </div>
+            <div class="col mb-5 d-flex justify-content-center">
+              <button
+                type="submit"
+                class="btn btn-success btn-r buttonfont p-3"
+              >
+                JOIN OUR LIST
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="col px-3">
+        <p class="SecTxt text-center">
+          All the best brands <br />
+          already use us.
+        </p>
+      </div>
+      <div class="container d-flex flex-wrap justify-content-evenly mb-5 py-3">
+        <div>
+          <img
+            src="/codingPractice/RWD-Practice/image/Image 2 (image).png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="/codingPractice/RWD-Practice/image/Image 1 (image).png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="/codingPractice/RWD-Practice/image/Quest logo Sept 2019 (image).png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="/codingPractice/RWD-Practice/image/Image 3 (image).png"
+            alt=""
+          />
+        </div>
+        <div>
+          <img
+            src="/codingPractice/RWD-Practice/image/Image 4 (image).png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="getStarted bg-success d-flex align-items-center justify-content-center"
+      style="height: 366px"
+    >
+      <div class="">
+        <h1 class="display-2 text-light titlefont text-center">
+          Get started today!
+        </h1>
+        <div class="col text-center">
+          <button
+            type="button"
+            class="btn btn-light btn-r buttonfont text-success my-3 p-3"
+          >
+            PICK A PLAN
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="container bg-white">
+      <div class="row py-5 d-flex justify-content-between">
+        <div class="col d-flex align-items-top">
+          <div class="logo">
+            <img
+              src="/codingPractice/RWD-Practice/image/53b16e9c9138f867a828189389cfc8e7.png"
+              alt="Logo"
+              class="align-text-center object-fit-cover"
+            />
+          </div>
+          <a class="navbar-brand logofont" href="#"> NinjaMail </a>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <div class="">
+            <li class="">
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Features</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Services</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Partners</a
+              >
+            </li>
+          </div>
+          <div class="">
+            <li class="">
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >About Us</a
+              >
+            </li>
+            <li class="">
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Tutorials</a
+              >
+            </li>
+            <li class="">
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Resources</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Help Center</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Templates</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Case Studies</a
+              >
+            </li>
+          </div>
+          <div class="">
+            <li class="">
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Medium</a
+              >
+            </li>
+            <li class="">
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Twitter</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Facebook</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Instagram</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >LinkedIn</a
+              >
+            </li>
+          </div>
+          <div class="">
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Slack</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-black Sec4Txt" href=""
+                >Jobs</a
+              >
+            </li>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row justify-content-center align-items-center g-2 text-center py-3 border-top border-3"
+      >
+        <div class="col-8 footerTxt">
+          NinjaMail is a sample project for Quest AI. © 2019 Quest AI, All
+          rights reserved.
+        </div>
+        <div class="col footerTxt">Terms & Conditions</div>
+        <div class="col footerTxt">Privacy Policy</div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Libraries -->
+  </body>
+</html>

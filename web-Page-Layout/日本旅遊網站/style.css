@@ -1,0 +1,192 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body img.FixedImage {
+  min-height: 100vh;
+  position: fixed;
+  width: 100%;
+  z-index: -10;
+}
+body header {
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0rem 1rem;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+  box-shadow: 0 10px 6px -6px rgba(119, 119, 119, 0.3529411765);
+}
+body header section.logo {
+  display: flex;
+  flex: 2 1 400px;
+  align-items: center;
+}
+body header section.logo img {
+  width: 6vw;
+  height: 6vw;
+}
+body header section.logo h1 {
+  font-size: 2.4rem;
+}
+body header nav {
+  flex: 5 1 500px;
+}
+body header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0.5rem 0rem;
+}
+body header nav ul li a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: rgb(15, 15, 15);
+  padding-bottom: 0.3rem;
+  transition: 0.2s ease;
+}
+body header nav ul li a:hover {
+  color: rgba(126, 83, 255, 0.878);
+  border-bottom: 3px solid rgba(126, 83, 255, 0.878);
+}
+body main section.background {
+  background-image: url(../images/日本櫻花.jpg);
+  min-height: 70vh;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+  transition: all 0.7s ease;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main section.background div.filter {
+  background-color: rgba(0, 0, 0, 0.462745098);
+  width: 100%;
+  min-height: 70vh;
+  position: absolute;
+}
+body main section.background h3 {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-align: center;
+  z-index: 1;
+}
+body main section.info {
+  background-color: rgb(255, 255, 255);
+  padding: 1rem 0rem;
+}
+body main section.info h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+body main section.info div.circles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body main section.info div.circles div.circle {
+  padding: 1rem;
+  flex: 0 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main section.info div.circles div.circle img {
+  width: 80%;
+  border-radius: 50%;
+  padding: 0.3rem;
+  margin-bottom: 0.5rem;
+  transition: 0.3s ease;
+}
+body main section.info div.circles div.circle img:hover {
+  border: 4px solid rgba(126, 83, 255, 0.878);
+}
+body main section.EmptyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background-color: rgba(0, 0, 0, 0.4392156863);
+}
+body main section.EmptyContainer p {
+  color: #ffffff;
+  font-size: 2rem;
+  padding: 2rem;
+}
+body main section.map {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+}
+body main section.map h2 {
+  text-align: center;
+}
+body main section.map p {
+  margin: 1rem 0rem;
+}
+body main section.map iframe {
+  width: 100%;
+  height: 40vh;
+}
+body footer {
+  background-color: rgba(0, 0, 0, 0.4392156863);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+body footer section.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body footer section.logo h1 {
+  color: #ffffff;
+  padding: 1rem;
+  font-size: 2rem;
+}
+body footer section.logo img {
+  width: 20vw;
+  margin-top: 1rem;
+}
+body footer section.links a img {
+  width: 5vh;
+  margin: 1rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(126, 83, 255, 0.878);
+}/*# sourceMappingURL=style.css.map */
