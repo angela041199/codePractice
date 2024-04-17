@@ -7,41 +7,55 @@
     <style>
       body {
         box-sizing: border-box;
-        margin: 0;
-        bottom: 0;
         background-color: black;
         display: flex;
         flex-direction: column;
+        margin: 0;
         align-items: center;
       }
       #mycanvas {
         display: flex;
         margin: auto;
         border: 3px solid lightgreen;
+        box-shadow: 0px 0px 20px rgb(255, 255, 255);
         position: absolute;
         margin-top: calc((100vh - 320px) / 2);
+      }
+      #score {
+        padding-top: 50px;
+        margin: 0;
       }
       #score,
       #highestScore {
         color: aliceblue;
       }
       .btn {
+        padding: 10px;
         margin: auto;
-        font-size: larger;
+        font-size: 16px;
+        letter-spacing: 1px;
+        color: #94ff9a;
+        border: 1px solid #94ff9a;
+
+        transition: 0.5s;
+
         &:hover {
-          background-color: #39503a;
-          color: aliceblue;
+          letter-spacing: 3px;
+          border: 2px solid #94ff9a;
+
+          box-shadow: 0 0 15px #94ff9a;
           transition: 0.5s;
+          cursor: pointer;
         }
       }
     </style>
   </head>
   <body>
-    <p id="score">分數：</p>
-    <p id="highestScore">最高分：</p>
-    <button type="button" class="btn" onclick="location.reload()">
-      開始新遊戲
-    </button>
+    <p id="score"></p>
+    <p id="highestScore"></p>
+    <div type="button" class="btn" onclick="location.reload()">
+      <span>START A NEW GAME</span>
+    </div>
     <canvas
       id="mycanvas"
       width="320"
@@ -56,23 +70,26 @@
       const column = canvas.height / unit;
 
       let snake = [];
-      snake[0] = {
-        x: 80,
-        y: 0,
-      };
-      snake[1] = {
-        x: 60,
-        y: 0,
-      };
-      snake[2] = {
-        x: 40,
-        y: 0,
-      };
-      snake[3] = {
-        x: 20,
-        y: 0,
-      };
+      function creatSnake() {
+        snake[0] = {
+          x: 80,
+          y: 0,
+        };
+        snake[1] = {
+          x: 60,
+          y: 0,
+        };
+        snake[2] = {
+          x: 40,
+          y: 0,
+        };
+        snake[3] = {
+          x: 20,
+          y: 0,
+        };
+      }
 
+      creatSnake();
       class Fruit {
         constructor() {
           this.x = Math.floor(Math.random() * column) * unit;
@@ -108,11 +125,16 @@
       }
 
       let myFruit = new Fruit();
+      let score = 0;
+      let highestScore;
+      loadHigherScore();
+      document.querySelector("#score").innerHTML = "遊戲分數：" + score;
+      document.querySelector("#highestScore").innerHTML =
+        "歷史高分：" + highestScore;
 
       let d = "Right";
 
-      window.addEventListener("keydown", (e) => {
-        // console.log(e.key);
+      function changeD(e) {
         if (e.key == "ArrowUp" && d != "Down") {
           // console.log("往上");
           d = "Up";
@@ -126,9 +148,19 @@
           // console.log("往右");
           d = "Right";
         }
-      });
+        window.removeEventListener("keydown", changeD);
+      }
+      window.addEventListener("keydown", changeD);
 
       function draw() {
+        // 每次畫圖前確認蛇有沒有咬到自己
+        for (let i = 1; i < snake.length; i++) {
+          if (snake[i].x == snake[0].x && snake[i].y == snake[0].y) {
+            clearInterval(myGame);
+            alert("Game Over");
+            return;
+          }
+        }
         // console.log("正在畫蛇");
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -176,18 +208,36 @@
         };
         // 確認蛇是否有吃到果實
         if (snake[0].x == myFruit.x && snake[0].y == myFruit.y) {
-          console.log("吃到果實了");
+          // console.log("吃到果實了");
           myFruit.pickAlocation();
-          // 隨機選定新果實位置
-          // 畫出新果實
+          score++;
+          setHigestScore(score);
+          document.querySelector("#score").innerHTML = "遊戲分數：" + score;
+          document.querySelector("#highestScore").innerHTML =
+            "歷史高分：" + highestScore;
           // 更新分數
         } else {
           snake.pop();
         }
         snake.unshift(newHead);
+        window.addEventListener("keydown", changeD);
       }
 
       let myGame = setInterval(draw, 150);
+
+      function loadHigherScore() {
+        if (localStorage.getItem("highestScore") == null) {
+          highestScore = 0;
+        } else {
+          highestScore = Number(localStorage.getItem("highestScore"));
+        }
+      }
+      function setHigestScore(score) {
+        if (score > highestScore) {
+          localStorage.setItem("highestScore", score);
+          highestScore = score;
+        }
+      }
     </script>
   </body>
 </html>
