@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>貪食蛇遊戲</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        margin: 0;
+        bottom: 0;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #mycanvas {
+        display: flex;
+        margin: auto;
+        border: 3px solid lightgreen;
+        position: absolute;
+        margin-top: calc((100vh - 320px) / 2);
+      }
+      #score,
+      #highestScore {
+        color: aliceblue;
+      }
+      .btn {
+        margin: auto;
+        font-size: larger;
+        &:hover {
+          background-color: #39503a;
+          color: aliceblue;
+          transition: 0.5s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <p id="score">分數：</p>
+    <p id="highestScore">最高分：</p>
+    <button type="button" class="btn" onclick="location.reload()">
+      開始新遊戲
+    </button>
+    <canvas
+      id="mycanvas"
+      width="320"
+      height="320"
+      style="background-color: black"
+    ></canvas>
+    <script>
+      const canvas = document.querySelector("#mycanvas");
+      const ctx = canvas.getContext("2d");
+      const unit = 20;
+      const row = canvas.width / unit;
+      const column = canvas.height / unit;
+
+      let snake = [];
+      snake[0] = {
+        x: 80,
+        y: 0,
+      };
+      snake[1] = {
+        x: 60,
+        y: 0,
+      };
+      snake[2] = {
+        x: 40,
+        y: 0,
+      };
+      snake[3] = {
+        x: 20,
+        y: 0,
+      };
+
+      class Fruit {
+        constructor() {
+          this.x = Math.floor(Math.random() * column) * unit;
+          this.y = Math.floor(Math.random() * row) * unit;
+        }
+        drawFruit() {
+          ctx.fillStyle = "yellow";
+          ctx.fillRect(this.x, this.y, unit, unit);
+        }
+        pickAlocation() {
+          let overlapping = false;
+          let new_x;
+          let new_y;
+
+          function checkOverlap(new_x, new_y) {
+            for (let i = 0; i < snake.length; i++) {
+              if (new_x == snake[i].x && new_y == snake[i].y) {
+                overlapping = true;
+                return;
+              } else {
+                overlapping = false;
+              }
+            }
+          }
+          do {
+            new_x = Math.floor(Math.random() * column) * unit;
+            new_y = Math.floor(Math.random() * row) * unit;
+            checkOverlap(new_x, new_y);
+          } while (overlapping);
+          this.x = new_x;
+          this.y = new_y;
+        }
+      }
+
+      let myFruit = new Fruit();
+
+      let d = "Right";
+
+      window.addEventListener("keydown", (e) => {
+        // console.log(e.key);
+        if (e.key == "ArrowUp" && d != "Down") {
+          // console.log("往上");
+          d = "Up";
+        } else if (e.key == "ArrowDown" && d != "Up") {
+          // console.log("往下");
+          d = "Down";
+        } else if (e.key == "ArrowLeft" && d != "Right") {
+          // console.log("往左");
+          d = "Left";
+        } else if (e.key == "ArrowRight" && d != "Left") {
+          // console.log("往右");
+          d = "Right";
+        }
+      });
+
+      function draw() {
+        // console.log("正在畫蛇");
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        myFruit.drawFruit();
+        // 畫蛇
+        for (i = 0; i < snake.length; i++) {
+          if (i == 0) {
+            ctx.fillStyle = "lightgreen";
+          } else {
+            ctx.fillStyle = "lightblue";
+          }
+          ctx.strokeStyle = "white";
+
+          if (snake[i].x >= canvas.width) {
+            snake[i].x = 0;
+          }
+          if (snake[i].x < 0) {
+            snake[i].x = canvas.width - unit;
+          }
+          if (snake[i].y >= canvas.height) {
+            snake[i].y = 0;
+          }
+          if (snake[i].y < 0) {
+            snake[i].y = canvas.height - unit;
+          }
+
+          ctx.fillRect(snake[i].x, snake[i].y, unit, unit);
+          ctx.strokeRect(snake[i].x, snake[i].y, unit, unit);
+        }
+        let snakeX = snake[0].x;
+        let snakeY = snake[0].y;
+        if (d == "Left") {
+          snakeX -= unit;
+        } else if (d == "Right") {
+          snakeX += unit;
+        } else if (d == "Up") {
+          snakeY -= unit;
+        } else if (d == "Down") {
+          snakeY += unit;
+        }
+        let newHead = {
+          x: snakeX,
+          y: snakeY,
+        };
+        // 確認蛇是否有吃到果實
+        if (snake[0].x == myFruit.x && snake[0].y == myFruit.y) {
+          console.log("吃到果實了");
+          myFruit.pickAlocation();
+          // 隨機選定新果實位置
+          // 畫出新果實
+          // 更新分數
+        } else {
+          snake.pop();
+        }
+        snake.unshift(newHead);
+      }
+
+      let myGame = setInterval(draw, 150);
+    </script>
+  </body>
+</html>
